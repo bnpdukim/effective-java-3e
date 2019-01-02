@@ -14,7 +14,7 @@ public class NutritionFacts {
     private final int sodium;
     private final int carbohydrate;
 
-    public NutritionFacts(Builder builder) {
+    private NutritionFacts(Builder builder) {
         this.servingSize = builder.servingSize;
         this.servings = builder.servings;
         this.calories = builder.calories;

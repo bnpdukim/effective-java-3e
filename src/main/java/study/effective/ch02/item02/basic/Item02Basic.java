@@ -1,11 +1,9 @@
-package study.effective.ch02.item02;
+package study.effective.ch02.item02.basic;
 
 import lombok.extern.slf4j.Slf4j;
-import study.effective.ch02.item02.basic.NutritionFacts;
-import study.effective.ch02.item02.basic.NutritionFacts2;
 
 @Slf4j
-public class Item02 {
+public class Item02Basic {
     public static void main(String[] args) {
         NutritionFacts cocaCola = new NutritionFacts.Builder(240,8)
                 .calories(100)
