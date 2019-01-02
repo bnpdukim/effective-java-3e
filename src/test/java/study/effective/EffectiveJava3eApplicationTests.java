@@ -1,4 +1,4 @@
-package study.effectivejava3e;
+package study.effective;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

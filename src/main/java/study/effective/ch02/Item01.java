@@ -1,13 +1,16 @@
-package study.effectivejava3e.ch02;
+package study.effective.ch02;
 
 import lombok.extern.slf4j.Slf4j;
-import study.effectivejava3e.ch02.service.ServiceInterface;
-import study.effectivejava3e.ch02.service.ServiceProvider;
+import study.effective.ch02.driver.DefaultDriver;
+import study.effective.ch02.driver.Driver;
+import study.effective.ch02.service.ServiceInterface;
+import study.effective.ch02.service.ServiceProvider;
 
 import java.lang.reflect.InvocationTargetException;
 import java.math.BigInteger;
-import java.sql.SQLException;
+import java.sql.DriverManager;
 import java.util.*;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 
 @Slf4j
@@ -38,19 +41,33 @@ public class Item01 {
         Set<WeekOfDay> weekOfDays =  EnumSet.of(WeekOfDay.MONDAY, WeekOfDay.TUESDAY, WeekOfDay.WEDNESDAY, WeekOfDay.THURSDAY, WeekOfDay.FRIDAY, WeekOfDay.SATURDAY, WeekOfDay.SUNDAY);
 
 
+        log.info("-- service interface, provider registration api, service access api --");
         // 서비스 등록
-        ServiceProvider.getInstance().regist("default", "study.effectivejava3e.ch02.service.ServiceInterface$Default");
-        ServiceProvider.getInstance().regist("newYear", "study.effectivejava3e.ch02.service.ServiceInterface$HappyNewYear");
+        ServiceProvider.register("default", "study.effective.ch02.service.ServiceInterface$Default");
+        ServiceProvider.register("newYear", "study.effective.ch02.service.ServiceInterface$HappyNewYear");
         // 서비스 조회
-        String className = ServiceProvider.getInstance().findClass("default");
+        String className = ServiceProvider.findClass("default");
         // 서비스 생성
         execute(className);
-        className = ServiceProvider.getInstance().findClass("newYear");
+        className = ServiceProvider.findClass("newYear");
         execute(className);
+
+
+        // ------------
+        log.info("-- service provider interface --");
+        Class.forName("study.effective.ch02.driver.DefaultDriver");
+        Class.forName("study.effective.ch02.driver.HappyNewYearDriver");
+
+        ServiceInterface service = ServiceProvider.getService("default");
+        service.print();
+        ServiceProvider.getService("happyNewYear").print();
+
     }
 
     private static void execute(String className) throws InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException, ClassNotFoundException {
+        // 리플렉션을 이용한 객체 생성
         ServiceInterface serviceInterface = (ServiceInterface) Class.forName(className).getConstructor().newInstance();
         serviceInterface.print();
     }
+
 }
