@@ -1,4 +1,4 @@
-package study.effective.ch02.service;
+package study.effective.ch02.item01.service;
 
 import lombok.extern.slf4j.Slf4j;
 

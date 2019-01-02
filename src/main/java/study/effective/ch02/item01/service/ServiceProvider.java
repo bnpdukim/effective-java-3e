@@ -1,8 +1,7 @@
-package study.effective.ch02.service;
+package study.effective.ch02.item01.service;
 
-import study.effective.ch02.driver.Driver;
+import study.effective.ch02.item01.driver.Driver;
 
-import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 

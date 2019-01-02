@@ -1,16 +1,12 @@
-package study.effective.ch02;
+package study.effective.ch02.item01;
 
 import lombok.extern.slf4j.Slf4j;
-import study.effective.ch02.driver.DefaultDriver;
-import study.effective.ch02.driver.Driver;
-import study.effective.ch02.service.ServiceInterface;
-import study.effective.ch02.service.ServiceProvider;
+import study.effective.ch02.item01.service.ServiceInterface;
+import study.effective.ch02.item01.service.ServiceProvider;
 
 import java.lang.reflect.InvocationTargetException;
 import java.math.BigInteger;
-import java.sql.DriverManager;
 import java.util.*;
-import java.util.concurrent.CopyOnWriteArrayList;
 
 
 @Slf4j
@@ -43,8 +39,8 @@ public class Item01 {
 
         log.info("-- service interface, provider registration api, service access api --");
         // 서비스 등록
-        ServiceProvider.register("default", "study.effective.ch02.service.ServiceInterface$Default");
-        ServiceProvider.register("newYear", "study.effective.ch02.service.ServiceInterface$HappyNewYear");
+        ServiceProvider.register("default", "study.effective.ch02.item01.service.ServiceInterface$Default");
+        ServiceProvider.register("newYear", "study.effective.ch02.item01.service.ServiceInterface$HappyNewYear");
         // 서비스 조회
         String className = ServiceProvider.findClass("default");
         // 서비스 생성
@@ -55,13 +51,12 @@ public class Item01 {
 
         // ------------
         log.info("-- service provider interface --");
-        Class.forName("study.effective.ch02.driver.DefaultDriver");
-        Class.forName("study.effective.ch02.driver.HappyNewYearDriver");
+        Class.forName("study.effective.ch02.item01.driver.DefaultDriver");
+        Class.forName("study.effective.ch02.item01.driver.HappyNewYearDriver");
 
         ServiceInterface service = ServiceProvider.getService("default");
         service.print();
         ServiceProvider.getService("happyNewYear").print();
-
     }
 
     private static void execute(String className) throws InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException, ClassNotFoundException {

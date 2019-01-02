@@ -1,8 +1,8 @@
-package study.effective.ch02.driver;
+package study.effective.ch02.item01.driver;
 
 import lombok.extern.slf4j.Slf4j;
-import study.effective.ch02.service.ServiceInterface;
-import study.effective.ch02.service.ServiceProvider;
+import study.effective.ch02.item01.service.ServiceInterface;
+import study.effective.ch02.item01.service.ServiceProvider;
 
 @Slf4j
 public class DefaultDriver implements Driver{
