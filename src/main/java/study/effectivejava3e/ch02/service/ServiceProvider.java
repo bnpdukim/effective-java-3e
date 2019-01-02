@@ -13,6 +13,9 @@ public  class ServiceProvider {
 
     }
 
+    public void regist(String service, String serviceInterface) {
+        services.put(service, serviceInterface);
+    }
 
 
     public String findClass(String serviceName) {
