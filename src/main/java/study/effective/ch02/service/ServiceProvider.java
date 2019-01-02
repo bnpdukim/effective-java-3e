@@ -7,13 +7,10 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 public  class ServiceProvider {
-    private static ServiceProvider self = new ServiceProvider();
     private static final Map<String, String> services = new ConcurrentHashMap<>();
     private static final Map<String, Driver> drivers = new ConcurrentHashMap<>();
 
-    private ServiceProvider() {
-
-    }
+    private ServiceProvider() {}
 
     public static void register(String service, String serviceInterface) {
         services.put(service, serviceInterface);

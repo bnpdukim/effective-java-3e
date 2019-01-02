@@ -11,6 +11,7 @@ public class DefaultDriver implements Driver{
     }
 
     private static DefaultDriver driver;
+    private static ServiceInterface service = new ServiceInterface.Default();
     static {
         driver = new DefaultDriver();
         ServiceProvider.registerDriver("default", driver);
@@ -19,6 +20,6 @@ public class DefaultDriver implements Driver{
 
     @Override
     public ServiceInterface getService() {
-        return new ServiceInterface.Default();
+        return service;
     }
 }

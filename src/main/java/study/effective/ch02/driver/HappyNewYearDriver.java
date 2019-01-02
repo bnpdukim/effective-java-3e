@@ -9,6 +9,7 @@ public class HappyNewYearDriver implements Driver{
     }
 
     private static Driver driver;
+    private static ServiceInterface service = new ServiceInterface.HappyNewYear();
     static {
         driver = new HappyNewYearDriver();
         ServiceProvider.registerDriver("happyNewYear", driver);
@@ -17,6 +18,6 @@ public class HappyNewYearDriver implements Driver{
 
     @Override
     public ServiceInterface getService() {
-        return new ServiceInterface.HappyNewYear();
+        return service;
     }
 }
