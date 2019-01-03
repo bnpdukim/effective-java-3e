@@ -10,16 +10,20 @@ import java.util.Set;
 public class Item06 {
     public static void main(String[] args ) {
         // 문자열 리터럴은 문자열을 불변객체이다.
-        String s1 = "helloworld";
-        String s2 = "helloworld";
-        String s3 = new String("helloworld");
-        String s4 = new String("helloworld");
-
+        String s1 = new String("helloworld");
+        String s2 = new String("helloworld");
+        String s3 = "helloworld";
+        String s4 = "helloworld";
         log.info("s1==s2 : {}", s1==s2);
-        log.info("s1.equals(s2) : {}", s1.equals(s2));
         log.info("s3==s4 : {}", s3==s4);
-        log.info("s3.equals(s4) : {}", s3.equals(s4));
 
+        // 생성자를 이용하면 불필요한 객체 생성을 막는다.
+        Boolean b1 = new Boolean("true");
+        Boolean b2 = new Boolean("true");
+        Boolean b3 = Boolean.valueOf("true");
+        Boolean b4 = Boolean.valueOf("true");
+        log.info("b1==b2 : {}", b1==b2);
+        log.info("b3==b4 : {}", b3==b4);
 
         // 매번 비싼 객체인 Pattern 객체를 만든다.
         Util.isRomanNumeralStupid("test");
@@ -36,8 +40,7 @@ public class Item06 {
         log.info("{}", keys1==keys2);
         log.info("{}", keys1.equals(keys2));
 
-        keys2.remove("key1");
-
+        keys2.remove("key1"); // 주의 요망, key1을 사용하는 개발자는 빡칠수 있음
         log.info("remove in keys2, then keys1 : {}", keys1);
 
 
