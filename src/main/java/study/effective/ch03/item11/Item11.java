@@ -13,6 +13,7 @@ public class Item11 {
 
         Map<PhoneNumber, String> m = new HashMap<>();
         m.put(pn1,"제니");
+        log.info("pn1 hashcode : {}, pn2 hashcode : {}", pn1.hashCode(), pn2.hashCode());
         log.info("pn : {}",m.get(pn1));
         log.info("pn : {}",m.get(pn2));
 
