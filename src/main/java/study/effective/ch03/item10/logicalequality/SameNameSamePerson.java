@@ -1,4 +1,4 @@
-package study.effective.ch03.item10;
+package study.effective.ch03.item10.logicalequality;
 
 public class SameNameSamePerson {
     private final String name;

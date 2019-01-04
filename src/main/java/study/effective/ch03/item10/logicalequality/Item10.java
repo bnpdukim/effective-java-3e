@@ -1,4 +1,4 @@
-package study.effective.ch03.item10;
+package study.effective.ch03.item10.logicalequality;
 
 import lombok.extern.slf4j.Slf4j;
 
