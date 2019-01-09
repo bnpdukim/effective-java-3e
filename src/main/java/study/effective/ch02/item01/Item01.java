@@ -31,7 +31,7 @@ public class Item01 {
         // new Collections();
         List list = Collections.emptyList();
         // java 8부터는 인터페이스내 정적 메소드 가능
-        // List list = List.emptyList();
+//         List list = List.emptyList();
 
         // 쓰는 입장에서 EnumSet.of가 RegularEnumSet인지 JumboEnumSet인지 알 필요 없음.
         Set<WeekOfDay> weekOfDays =  EnumSet.of(WeekOfDay.MONDAY, WeekOfDay.TUESDAY, WeekOfDay.WEDNESDAY, WeekOfDay.THURSDAY, WeekOfDay.FRIDAY, WeekOfDay.SATURDAY, WeekOfDay.SUNDAY);
