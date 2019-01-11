@@ -1,4 +1,4 @@
-package study.effective.ch04.innerclass;
+package study.effective.ch04.item15;
 
 public class Item15 {
     private static class Coffee {
