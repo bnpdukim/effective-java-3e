@@ -1,4 +1,4 @@
-package study.effective.ch04;
+package study.effective.ch04.innerclass;
 
 public class Item15 {
     private static class Coffee {
@@ -22,7 +22,7 @@ public class Item15 {
         // http://www.java67.com/2012/10/nested-class-java-static-vs-non-static-inner.html
         new Coffee("라떼");
 
-//        new Coffee2("냠냠"); // error
+//        new Coffee2("아메리카노"); // error
         Item15 item15 = new Item15();
         Item15.Coffee2 coffee2 =  item15.new Coffee2("아메리카노");
     }
