@@ -6,7 +6,15 @@ public interface UserLog {
     void print(String msg);
     String hello(String username);
 
+    // skeletal
     @Slf4j
+    abstract class AbstractUserLog implements UserLog {
+        @Override
+        public void print(String message) {
+            log.info(hello(message));
+        }
+    }
+
     class Default implements UserLog {
         AbstractUserLog abstractUserLog = new Impl();
 
