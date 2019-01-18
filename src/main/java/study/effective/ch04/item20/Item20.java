@@ -16,6 +16,9 @@ public class Item20 {
         // simulated multiple inheritance
         UserLog.Wrapper userLog = new UserLog.Wrapper();
         userLog.print("sajacaros");
+
+        AbstractMap.Entry e;
+        AbstractMap.SimpleEntry s;
     }
 
     static List<Integer> intArrayAsListByTemplate(int[] a) {
