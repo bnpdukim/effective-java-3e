@@ -3,6 +3,8 @@ package study.effective.ch04.item17;
 import lombok.extern.slf4j.Slf4j;
 
 import java.math.BigInteger;
+import java.util.Set;
+import java.util.TreeSet;
 
 @Slf4j
 public class Item17 {
@@ -20,5 +22,10 @@ public class Item17 {
         BigInteger bi1 = BigInteger.valueOf(1);
         BigInteger bi2 = bi1.negate();  // BigIneger 1053 line 참고
         log.info("b1 == b2 : {}", bi1 == bi2);
+
+
+        // 불변 객체는 원소로 사용하기에 적합
+        Set<String> s = new TreeSet<>();
+        s.add("hello"); // compare를 이용
     }
 }
