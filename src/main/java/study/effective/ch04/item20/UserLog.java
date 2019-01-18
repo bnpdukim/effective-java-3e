@@ -15,21 +15,24 @@ public interface UserLog {
         }
     }
 
-    class Default implements UserLog {
-        AbstractUserLog abstractUserLog = new Impl();
+    class Wrapper implements UserLog {
+        private final AbstractUserLog abstractUserLog = new WrappedObject();
 
-        private class Impl extends AbstractUserLog {
+        // 실제구현체
+        private class WrappedObject extends AbstractUserLog {
             @Override
             public String hello(String username) {
                 return "hello " + username;
             }
         }
 
+        // forwarding
         @Override
         public void print(String msg) {
             abstractUserLog.print(msg);
         }
 
+        // forwarding
         @Override
         public String hello(String username) {
             return abstractUserLog.hello(username);

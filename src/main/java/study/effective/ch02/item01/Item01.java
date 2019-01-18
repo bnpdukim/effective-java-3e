@@ -39,7 +39,7 @@ public class Item01 {
 
         log.info("-- service interface, provider registration api, service access api --");
         // 서비스 등록
-        ServiceProvider.register("default", "study.effective.ch02.item01.service.ServiceInterface$Default");
+        ServiceProvider.register("default", "study.effective.ch02.item01.service.ServiceInterface$Wrapper");
         ServiceProvider.register("newYear", "study.effective.ch02.item01.service.ServiceInterface$HappyNewYear");
         // 서비스 조회
         String className = ServiceProvider.findClass("default");

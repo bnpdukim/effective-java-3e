@@ -9,11 +9,12 @@ import java.util.stream.IntStream;
 public class Item20 {
     public static void main(String[] args) {
         // template method
+        // 골격 제공 소스에 의해 get,set,size만 구현
         intArrayAsListByTemplate( IntStream.range(1,3).toArray() ).stream()
                 .forEach(n->log.info("{}",n));
 
         // simulated multiple inheritance
-        UserLog.Default userLog = new UserLog.Default();
+        UserLog.Wrapper userLog = new UserLog.Wrapper();
         userLog.print("sajacaros");
     }
 
