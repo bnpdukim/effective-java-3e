@@ -3,6 +3,7 @@ package study.effective.ch04.item17;
 import lombok.extern.slf4j.Slf4j;
 
 import java.math.BigInteger;
+import java.util.BitSet;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -27,5 +28,12 @@ public class Item17 {
         // 불변 객체는 원소로 사용하기에 적합
         Set<String> s = new TreeSet<>();
         s.add("hello"); // compare를 이용
+
+        // 불변 클래스는 조금만 수정해도 새로운 객체 생성해야함
+        BigInteger f = BigInteger.valueOf(1);
+        f.flipBit(0);
+
+        BitSet bitSet = new BitSet(1);
+        bitSet.flip(0); // 가변, 상수시간걸림림
     }
 }
