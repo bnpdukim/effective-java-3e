@@ -1,29 +1,17 @@
 package study.effective.ch04.item15;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 public class Item15 {
-    private static class Coffee {
-        private final String name;
-
-        private Coffee(String name) {
-            this.name = name;
-        }
-    }
-
-    private class Coffee2 {
-        private final String name;
-
-        private Coffee2(String name) {
-            this.name = name;
-        }
-    }
-
     public static void main(String[] args) {
         // static vs non static class
         // http://www.java67.com/2012/10/nested-class-java-static-vs-non-static-inner.html
-        new Coffee("라떼");
+        CoffeeShop.Coffee 라떼  = CoffeeShop.makeCoffee("라떼", true);
+        log.info(라떼.license());
 
-//        new Coffee2("아메리카노"); // error
-        Item15 item15 = new Item15();
-        Item15.Coffee2 coffee2 =  item15.new Coffee2("아메리카노");
+
+        CoffeeShop.Coffee 아메리카노  = CoffeeShop.makeCoffee("아메리카노", false);
+        log.info(아메리카노.license());
     }
 }
