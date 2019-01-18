@@ -1,5 +1,7 @@
 package study.effective.ch04.item17;
 
+import java.math.BigInteger;
+
 public class Complex {
     private final double re;
     private final double im;
