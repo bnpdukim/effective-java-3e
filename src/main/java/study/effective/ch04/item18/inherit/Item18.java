@@ -17,5 +17,6 @@ public class Item18 {
 //        s.add2(new Object());
 
         new Stack().add(new Object()); // pop, push.. add???
+
     }
 }
