@@ -2,15 +2,15 @@ package study.effective.ch04.item18.self;
 
 class WrappedObject implements Callback {
 
-    private final CallbackService service;
+    private final CallbackService callbackService;
 
-    WrappedObject(CallbackService service) {
-        this.service = service;
+    WrappedObject(CallbackService call) {
+        this.callbackService = call;
     }
 
     @Override
     public void registerCallback() {
-        service.performAsync(this);
+        callbackService.performAsync(this);
     }
 
     @Override
