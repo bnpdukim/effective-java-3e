@@ -40,4 +40,30 @@
   * List<Object>
     * 매개변수화 타입
     * List<Object>를 매개변수로 받는 메소드에 List<String> 넣는거 불가능
-    
+* 비한정적 와일드카드 타입(unbounded wildcard type) (code)
+  * Set<?>
+    * 제네릭 타입인 Set<E>의 비한정적 와일드카드 타입
+    * 가장 범용적인 매개변수화 Set 타입    
+    * 실제 타입 매개변수가 무엇인지 신경 쓰지 않고 사용 가능
+  * Set<?> vs Set
+    * Set<?>
+      * 제네릭 타입을 사용
+      * 안전
+      * 어떤 원소도 넣을 수 없다. (code)
+    * Set
+      * 로 타입
+      * 위험
+* 로 타입을 사용해야 하는 경우
+  * class 리터럴
+    * class 리터럴에 매개변수화 타입을 사용하지 못하게 함(배열과 기본 타입은 허용)
+    * List<String>.class와  List<?>.class 허용 안함
+  * intanceOf 연산자는 비한정적 와일드카드 타입 이외의 매개변수화 타입에는 적용할 수 없음
+```
+// 로 타입 사용의 좋은 예
+if( o instanceof Set) { // 로 타입
+  Set<?> s = (Set<?>) o;  // 와이드카드 타입
+}
+```
+![](EffectiveJavaGenericsItems.png)
+   
+   
