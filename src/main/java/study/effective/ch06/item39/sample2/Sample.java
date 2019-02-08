@@ -1,4 +1,4 @@
-package study.effective.ch06.item39.sample2.sample1;
+package study.effective.ch06.item39.sample2;
 
 public class Sample {
     @ExceptionTestCustom(ArithmeticException.class)

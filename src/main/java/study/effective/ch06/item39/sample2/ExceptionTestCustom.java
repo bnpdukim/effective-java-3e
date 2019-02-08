@@ -1,4 +1,4 @@
-package study.effective.ch06.item39.sample2.sample1;
+package study.effective.ch06.item39.sample2;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

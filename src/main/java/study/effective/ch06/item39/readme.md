@@ -36,5 +36,19 @@ public @interface TestCustom {
     * 애너테이션이 붙지 않은 메소드는 테스트 도구가 무시
     * 대상 코드의 의미는 그대로 둔 채 애너테이션에 관심 있는 도구에서 특별한 처리를 할 기회를 줌
       * ex) RunTests
-  * sample2 분석
-    
+  * sample2 분석 (code - sample2)
+    * 매개변수를 하나 받는 애너테이션 타입
+      * Class<? extends Throwable>
+  * sample3 분석 (code - sample3)
+    * 배열 매개변수를 받는 애너테이션 타입
+  * sample4 분석 (code - sample4)
+    * @Repeatable 메타 애너테이션 이용
+      * @Repeatable 단 애너테이션은 여러번 달 수 있음
+      * 주의점
+        * @Repeatable을 단 애너테이션을 반환하는 '컨테이너 애너테이션'을 정의해야함
+          * @Repeatable에 컨테이너 애너테이션을 전달
+        * 컨테이너 애너테이션은 내부 애너테이션 타입의 배열을 반환하는 value 메서드 정의
+        * @Retention과 @Target 명시
+      * 반복 가능 애너테이션을 여러개 달면 컨테이너 애너 테이션 타입이 적용
+        * isAnnotationPresent는 구분 함
+        * getAnnotationsByType은 구분 안함
