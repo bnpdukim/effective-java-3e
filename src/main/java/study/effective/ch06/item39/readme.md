@@ -16,7 +16,7 @@
 public @interface TestCustom {
 }
 ```
-  * 메타애너테이션(meta-annotation) 
+  * 메타 애너테이션(meta-annotation) 
     * 애너테이션 선언에 다는 애너테이션
     * @Retention(RetentionPolicy.RUNTIME)
       * 런타임에도 @TestCustom이 유지 
