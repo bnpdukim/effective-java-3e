@@ -11,8 +11,7 @@ public class Item44 {
         int MAX = 4;
         LinkedHashMap<Integer, String> li_hash_map =
                 new LinkedHashMap<Integer, String>() {
-                    protected boolean removeEldestEntry(Map.Entry<Integer, String> eldest)
-                    {
+                    protected boolean removeEldestEntry(Map.Entry<Integer, String> eldest) {
                         return size() > MAX;
                     }
                 };
