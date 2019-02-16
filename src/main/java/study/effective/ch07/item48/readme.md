@@ -37,7 +37,10 @@
     - 결합법칙 만족(associative)
     - 간섭받지 않아야함(non-interfering)
     - 상태를 갖지 않아야 함(stateless)
+* 병렬 스트림의 출력 순서 보장
+  - forEach를 forEachOrdered로 바꿔주면 됨
 * 스트림 병렬화는 오직 성능 최적화 수단
+  - fork-join 풀에서 수행
   - 조건이 잘 갖춰지면 parallel 메서드 호출 하나로 프로세서 코어수에 비례하는 성능 향상 만끽
   ```
   static long pi(long n) {
