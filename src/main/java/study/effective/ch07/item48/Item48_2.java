@@ -23,5 +23,12 @@ public class Item48_2 {
                 .parallel()
                 .forEach(index -> log.info("Starting {}, index={}, {}", Thread.currentThread().getName(), index, new Date()));
         Thread.sleep(3000);
+
+        log.info("---------------------");
+
+        IntStream.range(0, 10)
+                .parallel()
+                .forEachOrdered(index -> log.info("Starting {}, index={}, {}", Thread.currentThread().getName(), index, new Date()));
+        Thread.sleep(3000);
     }
 }
