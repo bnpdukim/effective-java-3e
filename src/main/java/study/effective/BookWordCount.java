@@ -1,9 +1,8 @@
-package study.effective.ch07;
+package study.effective;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.text.PDFTextStripper;
-import org.springframework.util.StringUtils;
 
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -27,7 +26,8 @@ public class BookWordCount {
 //                .filter(e->e.getValue()<20)
                 .sorted( (f1,f2) ->Long.compare(f2.getValue(), f1.getValue()) )
                 .limit(100)
-                .forEach(e->System.out.print("\""+e.getKey()+"\","));
+                .forEach(e->log.info("{} : {}", e.getKey(),e.getValue()));
+//                .forEach(e->System.out.print("\""+e.getKey()+"\","));
     }
 
     private static Map<Object, Long> pdfWordCount(Path pdf) throws IOException {
