@@ -27,7 +27,7 @@
   - 실패하면 AssertionError 던짐
   - 런타임에 아무런 효과, 아무런 성능 저하도 없음
 
-* 나중에 쓰기 위해 저장하는 매개변수는 특히 더 신경써야 함
+* 나중에 사용되는 매개변수는 특히 더 신경써야 함
 ```
   static List<Integer> intArrayAsList(int[] a) {
     Objects.requireNonNull(a);  // 검사를 안하면 추후 리스트를 사용할때 null 에러 발생
