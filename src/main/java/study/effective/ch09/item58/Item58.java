@@ -26,7 +26,7 @@ public class Item58 {
             for(Iterator<Face> j = faces.iterator(); j.hasNext();)
                 log.info("{} {}", i.next(), j.next());
 
-        // code 58-6 - good
+        // code 58-7 - good
         List<Map.Entry<Suit,Rank>> entryList2 = new ArrayList<>();
         for(Suit s : suits)
             for(Rank r : ranks)
