@@ -16,4 +16,5 @@
     - 요창한 동작을 대상 객체가 지원하지 않을 때 던짐
 * 표준 예외를 확장하여 새로 만드는 작업은 자제
 * 예외의 기능이 상호배타적이 아니므로 예외 선택이 어려울 수 있음
-  - 인수 값이 무엇이었든지 실패했을거라면 IllegalStateException, 그렇지 않으면 IllegalArgumentException
+  - IllegalStateException vs IllegalArgumentException
+    - 인수 값이 무엇이었든지 실패했을거라면 IllegalStateException, 그렇지 않으면 IllegalArgumentException
