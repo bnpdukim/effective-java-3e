@@ -1,16 +1,15 @@
-package study.effective.ch11.item79;
+package study.effective.ch11.item79.basic;
 
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.HashSet;
 import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 @Slf4j
 public class Item79_3 {
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
 
         ObservableSet<Integer> set = new ObservableSet<>(new HashSet<>());
         set.addObserver( new SetObserver<Integer>() {

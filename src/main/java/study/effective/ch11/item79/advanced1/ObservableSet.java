@@ -1,4 +1,4 @@
-package study.effective.ch11.item79;
+package study.effective.ch11.item79.advanced1;
 
 import study.effective.ch04.item18.composit.ForwardingSet;
 
@@ -27,10 +27,12 @@ public class ObservableSet<E> extends ForwardingSet<E> {
     }
 
     private void notifyElementAdded(E element) {
+        List<SetObserver<E>> snapshot = null;
         synchronized (observers) {
-            for(SetObserver<E> observer : observers) {
-                observer.added(this, element);
-            }
+            snapshot = new ArrayList<>(observers);
+        }
+        for(SetObserver<E> observer : snapshot) {
+            observer.added(this, element);
         }
     }
 
