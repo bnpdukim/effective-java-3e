@@ -24,7 +24,7 @@
           synchronized (observers) {
               return observers.remove(observer);
           }
-      }  
+      }
       private void notifyElementAdded(E element) {
           synchronized (observers) {
               for(SetObserver<E> observer : observers) 

@@ -1,11 +1,17 @@
 ## 스레드보다는 실행자, 태스크, 스크림을 애용하라
 * 실행자 프레임워크(Executor Framework)
   - 실행자 생성(작업큐)
+  ```
   ExecutorService exec = Executors.newSingleThreadExecutor();
+  ```
   - 실행자에 실행할 task 넘기는 방법
+  ```
   exec.execute(runnable);
+  ```
   - 실행자를 우하하게 종료
+  ```
   exec.shutdown()
+  ```
   - 주요 기능
     - 특정 태스크가 완료되기를 기다린다.
     - 태스크 모음 중 하나(invokeAny 메소드) 혹은 모든 태스크(invokeAll)가 완료되기를 기다린다.
