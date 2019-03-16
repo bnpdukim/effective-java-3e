@@ -100,16 +100,26 @@
     - 실패 방지
     - 동시성 효율 크게 개선
   ```
-  public void addObserver(SetObserver<E> observer) {
-    observers.add(observer);
-  }
-  public boolean removeObserver(SetObserver<E> observer) {
-    return observers.remove(observer);
-  }
-  private void notifyElementAdded(E element) {
-    for(SetObserver<E> observer : observers) {
-      observer.added(this, element);
-    }
+  public class ObservableSet<E> extends ForwardingSet<E> {
+      public ObservableSet(Set<E> s) {
+          super(s);
+      }
+    
+      private final List<SetObserver<E>> observers = new CopyOnWriteArrayList<>();
+    
+      public void addObserver(SetObserver<E> observer) {
+          observers.add(observer);
+      }
+    
+      public boolean removeObserver(SetObserver<E> observer) {
+          return observers.remove(observer);
+      }
+    
+      private void notifyElementAdded(E element) {
+          for(SetObserver<E> observer : observers) {
+              observer.added(this, element);
+          }
+      }
   }
   ```
   - 동시성 컬렉션 라이브러리의 CopyOnWirteArrayList가 동기화 블록을 바깥으로 옮기기 위한 목적으로 설계됨
@@ -125,7 +135,7 @@
     - java.util.concurrnt
     - 클라이언트가 외부에서 객체 전체에 락을 거는 것보다 동시성을 월등히 개선할때만 선택
 * 지침을 어긴 예
-  - StringBuilder
+  - StringBuffer
     - 거의 단일 스레이드에서 동작하는데도 내부 동기화 수행
     - 동기화를 수행하지 않는 StringBuilder가 추후 개발
   - Random
