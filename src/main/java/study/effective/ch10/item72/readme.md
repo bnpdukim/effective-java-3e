@@ -2,7 +2,7 @@
 * 표준 예외 사용시 다른 사람이 사용하기 쉬어짐
 * 널리 사용되는 예외들
   - IllegalArgumentException
-    -인수로 부족적한 값을 넘길 때 던지는 예외
+    -인수로 부적절한 값을 넘길 때 던지는 예외
   - IllegalStateException
     - 호출된 메서드를 수행하기에 적합하지 않을 때
   - NullPointerException
